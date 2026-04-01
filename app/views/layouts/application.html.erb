@@ -24,6 +24,17 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to("BabyChecker", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("BabyCheckerとは", "/about") %>
+        </li>
+      </ul>
+    </header>
+    
     <%= yield %>
   </body>
 </html>
