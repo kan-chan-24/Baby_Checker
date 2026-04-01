@@ -3,7 +3,4 @@ class HomeController < ApplicationController
 
   end
 
-  def answer
-    
-  end
 end
