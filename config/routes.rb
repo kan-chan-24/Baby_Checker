@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/" => "home#top"
+  get "/input" => "home#input"
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
