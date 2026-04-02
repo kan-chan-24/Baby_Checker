@@ -1,1 +1,10 @@
 <h2>誕生日を入力してね</h2>
+
+<%= form_tag("/submit") do %>
+    <div class="form">
+        <div class="form-body">
+            <input type="date" name="birth_day">
+            <input type="submit" value="これが私の誕生日！">
+        </div>
+    </div>
+<% end %>
