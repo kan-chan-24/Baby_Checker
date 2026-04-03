@@ -1,5 +1,13 @@
 <h2>誕生日を入力してね</h2>
 
+<!--エラーメッセージ-->
+<% if @days %>
+    <% @days.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %>
+<% end %>
+
+<!--入力フォームと送信-->
 <%= form_tag("/submit") do %>
     <div class="form">
         <div class="form-body">
