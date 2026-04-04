@@ -23,5 +23,8 @@ module BabyCheck
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # タイムゾーンを日本時間基準に設定
+    config.time_zone = 'Tokyo' # rubocop:disable Style/StringLiterals
   end
 end
