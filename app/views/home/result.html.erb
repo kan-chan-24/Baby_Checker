@@ -1,10 +1,17 @@
 <h1>ここに結果を表示</h1>
 
 <!--取得内容の確認用テストコード--> 
-<!-- 
-<%= @days.i_day %>
-<%= @days.created_at.strftime('%Y/%m/%d %H:%M') %>
--->
+<div class="test">
+    <div>
+        <h2>今日の日付</h2>
+        <p><%= @today.i_day.strftime('%Y/%m/%d') %></p>
+    </div>
+    <div>
+        <h2>入力された誕生日</h2>
+        <p><%= @b_days.i_day.strftime('%Y/%m/%d') %></p>
+    </div>
+</div>
+
 
 <div class="button">
     <%= link_to "Topへ戻る" , "/" %>
