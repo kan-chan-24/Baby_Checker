@@ -1,4 +1,4 @@
-<h1>ここに結果を表示</h1>
+<h1>診断結果！</h1>
 
 <!--取得内容の確認用テストコード--> 
 <div class="test">
@@ -8,7 +8,26 @@
     </div>
     <div>
         <h2>入力された誕生日</h2>
-        <p><%= @b_days.i_day.strftime('%Y/%m/%d') %></p>
+        <p><%= @b_day.i_day.strftime('%Y/%m/%d') %></p>
+    </div>
+    <div>
+        <h2>生後日数</h2>
+        <!-- （今日の日付 - 誕生日）で生後日数を算出 -->
+        <% since = @today.i_day - @b_day.i_day %>
+         <!-- date型の計算結果はRational（分数）型で出るため、numeratorで分子のみを出力 -->
+        <p> <%= since.numerator %> </p>
+
+        <!-- 現在の日付と誕生日から、生後の%ヶ月と%日なのかを算出する -->
+        <% since_month = (@today.i_day.year - @b_day.i_day.year) * 12 + @today.i_day.month - @b_day.i_day.month - (@today.i_day.day >= @b_day.i_day.day ? 0 : 1) %>
+        <% since_days =  @today.i_day - (@b_day.i_day >> since_month) %>
+        <!--計算ロジック-->
+        <!-- (@today.i_day.year - @b_day.i_day.year) * 12 →　年の差分を求めて月変換 -->
+        <!-- @today.i_day.month - @b_day.i_day.month →　そのまま月の差分を求める -->
+        <!-- (@today.i_day.day >= @b_day.i_day.day ? 0 : 1)
+            現在の日付 >= 誕生日の日付の場合は、そのまま月数を出したいので0で計算
+            終了の日付 < 開始の日付の場合は、月数をマイナス-1にしたいので1で計算 -->
+        <!-- @today.i_day - (@b_day.i_day >> since_month) → 上記で求めた満経過月数を入力された誕生日に足した日付と、現在の日付の差分日数を算出 -->
+        <p><%= since_month %>ヶ月と<%= since_days.numerator %>日</p>
     </div>
 </div>
 

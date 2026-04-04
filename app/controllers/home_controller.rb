@@ -21,8 +21,8 @@ class HomeController < ApplicationController
 
   def submit
     # 入力された日付(誕生日)を受け取り、データベースid:2へ保存
-    @b_days = Day.new(id: 2, i_day: params[:birth_day])
-    if @b_days.save # 日付が保存できた場合（バリデーション）
+    @b_day = Day.new(id: 2, i_day: params[:birth_day])
+    if @b_day.save # 日付が保存できた場合（バリデーション）
       redirect_to("/result")
     else # 日付が保存できなかった場合（バリデーション）
       redirect_to("/input")
@@ -31,6 +31,6 @@ class HomeController < ApplicationController
 
   def result
     @today = Day.find_by(id: 1)
-    @b_days = Day.find_by(id: 2)
+    @b_day = Day.find_by(id: 2)
   end
 end
