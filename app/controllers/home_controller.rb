@@ -25,7 +25,7 @@ class HomeController < ApplicationController
     if @b_day.save # 日付が保存できた場合（バリデーション）
       redirect_to("/result")
     else # 日付が保存できなかった場合（バリデーション）
-      redirect_to("/input")
+      render("home/input")
     end
   end
 
