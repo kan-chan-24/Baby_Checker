@@ -4,7 +4,7 @@
 <%= form_tag("/submit") do %>
     <div class="form">
         <div class="form-body">
-            <input type="date" name="birth_day" >
+            <input type="date" name="birth_day" max="<%= Date.today.strftime('%Y-%m-%d') %>" >
             <input type="submit" value="これが私の誕生日！">
         </div>
     </div>
