@@ -24,6 +24,8 @@ class HomeController < ApplicationController
       @today = Day.new(id: 1, i_day: Date.current)
       @today.save
       redirect_to("/result")
+    else # 日付の保存に失敗した場合（空入力バリデーションエラー）
+      render :input, status: :unprocessable_entity
     end
   end
 
