@@ -26,5 +26,8 @@ module BabyCheck
 
     # タイムゾーンを日本時間基準に設定
     config.time_zone = 'Tokyo' # rubocop:disable Style/StringLiterals
+
+    # デフォルトのロケール設定を日本語に変更
+    config.i18n.default_locale = :ja
   end
 end
