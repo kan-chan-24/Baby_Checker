@@ -2,6 +2,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* 共通レイアウト */
+.button a{
+  text-decoration: none;
+  color:white;
+  text-shadow: 0.5px 1px 2px black;
+
+  font-size: 48px;
+  font-weight: 500;
+
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+
+.button a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #31aae2;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.button :hover::after{
+  width: 100%;
+}
 
 /* top-page */
 .top-main{
@@ -33,35 +61,6 @@
   color: white;
   font-size:64px;
   text-shadow: 2px 0px 5px black;
-}
-
-.top-logo a{
-  text-decoration: none;
-  color:white;
-  text-shadow: 0.5px 1px 2px black;
-
-  font-size: 48px;
-  font-weight: 500;
-
-  position: relative;
-  display: inline-block;
-  transition: .3s;
-}
-
-.top-logo a::after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 2px;
-  background-color: #31aae2;
-  transition: .3s;
-  transform: translateX(-50%);
-}
-
-.top-logo :hover::after{
-  width: 100%;
 }
 
 /* input-page */
@@ -107,6 +106,45 @@ form-body input[type="date"]{
 }
 
 /* result-page */
-h3{
+.result-main{
+  font-family: "Darumadrop One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: antiquewhite;
+
+  /* 方眼紙模様に必須のスタイル */
+  background-image: linear-gradient(0deg, transparent calc(100% - 1px), #d0d0d0 calc(100% - 1px)),
+                    linear-gradient(90deg, transparent calc(100% - 1px), #d0d0d0 calc(100% - 1px));
+  background-size: 16px 16px;
+  background-repeat: repeat;
+  background-position: left top;
+
+  /* 以下任意のスタイル */
+  padding: 20px;
+}
+
+.result-content{
+  margin:0 20px 0 20px;
+}
+
+.result-content h2{
+  font-size: 32px;
+}
+
+.result-content p{
+  font-size: 24px;
+}
+
+.result-content h3{
+  font-size:42px;
   color:red;
+}
+
+.result-content hr.title-style {
+  border-top: 3px double #8c8b8b;
+}
+
+.result-content hr.text-style {
+  border-top: 1px dashed #8c8b8b;
 }
