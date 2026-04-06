@@ -1,20 +1,26 @@
-<h2>誕生日を入力してね</h2>
+<div class="input-main">
+    <div class="input-form">
+        <h2>おたんじょうび をおしえてね。</h2>
 
-<!-- エラーメッセージを表示 -->
-<% if @b_day %><!-- リロード(render)時に、@b_day変数が宣言されているかを見る -->
-    <% @b_day.errors.full_messages.each do |message| %>
-    <!-- 変数messageを出力 -->
-    <%= message %>
-    <!-- each文終了 -->
-    <% end %>
-<% end %>
-
-<!--入力フォームと送信-->
-<%= form_tag("/submit") do %>
-    <div class="form">
-        <div class="form-body">
-            <input type="date" name="birth_day" min="1911-01-01" max="<%= Date.today.strftime('%Y-%m-%d') %>" >
-            <input type="submit" value="これが私の誕生日！">
+    <!-- エラーメッセージを表示 -->
+    <% if @b_day %><!-- リロード(render)時に、@b_day変数が宣言されているかを見る -->
+        <% @b_day.errors.full_messages.each do |message| %>
+        <!-- 変数messageを出力 -->
+        <div class="error-message">
+            <%= message %>
         </div>
+        <!-- each文終了 -->
+        <% end %>
+    <% end %>
+
+    <!--入力フォームと送信-->
+    <%= form_tag("/submit") do %>
+        <div class="form">
+            <div class="form-body">
+                <input type="date" name="birth_day" min="1911-01-01" max="<%= Date.today.strftime('%Y-%m-%d') %>" >
+                <input type="submit" value="これ">
+            </div>
+        </div>
+    <% end %>
     </div>
-<% end %>
+</div>

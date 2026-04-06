@@ -2,7 +2,7 @@ ja:
   activerecord:
     attributes:
       day: # モデル名(データベース)
-        i_day: "誕生日" # カラム名
+        i_day: "おたんじょうび " # カラム名
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -88,7 +88,7 @@ ja:
     format: "%{attribute}%{message}"
     messages:
       accepted: を受諾してください
-      blank: を入力してください
+      blank: をいれてね。
       confirmation: と%{attribute}の入力が一致しません
       empty: を入力してください
       equal_to: は%{count}にしてください
