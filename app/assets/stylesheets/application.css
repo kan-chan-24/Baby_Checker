@@ -130,6 +130,7 @@ form-body input[type="date"]{
 
 .result-content h2{
   font-size: 32px;
+  margin-bottom: 5px;
 }
 
 .result-content p{
