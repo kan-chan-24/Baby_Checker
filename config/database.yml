@@ -26,9 +26,9 @@ production:
   primary: &primary_production
         <<: *default
         url: <%= ENV["DATABASE_URL"] %>
-    cache:
+  cache:
         <<: *primary_production
-    queue:
+  queue:
         <<: *primary_production
-    cable:
+  cable:
         <<: *primary_production
